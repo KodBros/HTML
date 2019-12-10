@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var tiklandi = null;
+    function tiklandiMi(gelen) {
+        tiklandi = gelen;
+    }
+    function yaz(x) {
+        if (tiklandi != null) {
+            tiklandi.value += x;
+        }
+    }
+    function sil() {
+        tiklandi.value = tiklandi.value.substring(0, tiklandi.value.length - 1);
+    }
+    function sifirla() {
+        tiklandi.value = "";
+    }
+    function TOPLA() {
+        if (document.hesap.sayi1.value != "" && document.hesap.sayi2.value != "") {
+            document.hesap.sonuc.value = parseInt(document.hesap.sayi1.value) + parseInt(document.hesap.sayi2.value);
+        }
+    }
+
+    function CIKAR() {
+        if (document.hesap.sayi1.value != "" && document.hesap.sayi2.value != "") {
+            document.hesap.sonuc.value = parseInt(document.hesap.sayi1.value) - parseInt(document.hesap.sayi2.value);
+        }
+    }
+    function CARP() {
+        if (document.hesap.sayi1.value != "" && document.hesap.sayi2.value != "") {
+            document.hesap.sonuc.value = parseInt(document.hesap.sayi1.value) * parseInt(document.hesap.sayi2.value);
+        }
+    }
+    function BOL() {
+        if (document.hesap.sayi1.value != "" && document.hesap.sayi2.value != "") {
+            document.hesap.sonuc.value = parseInt(document.hesap.sayi1.value) / parseInt(document.hesap.sayi2.value);
+        }
+    }
+</script>
+
+<body>
+    <center>
+        <h3>HESAP MAKİNESİ</h3>
+        <form name="hesap" style="width: 430px; padding: 20px; background-color: rgb(93, 196, 118); margin-top: 20px; border-style: groove;">
+            SAYI1 : <input type="text" name="sayi1" style="margin-left: 24px; margin-top: 5px;" autofocus
+                onfocus="tiklandiMi(this)"></br>
+            SAYI2 : <input type="text" name="sayi2" style="margin-left: 24px; margin-top: 35px;"
+                onfocus="tiklandiMi(this)"></br>
+            SONUÇ : <input type="text" name="sonuc" style="margin-left: 24px; margin-top: 35px;"></br></br></br>
+            <input type="button" value="1" name="a1" style="height: 70px;width: 70px;" onclick="yaz(1)">
+            <input type="button" value="2" name="a1" style="height: 70px;width: 70px;" onclick="yaz(2)">
+            <input type="button" value="3" name="a1" style="height: 70px;width: 70px;" onclick="yaz(3)">
+            <input type="button" value="+" name="a1" style="height: 50px;width: 50px; font-size: 25px;"
+                onclick="TOPLA()"></br>
+            <input type="button" value="4" name="a1" style="height: 70px;width: 70px;" onclick="yaz(4)">
+            <input type="button" value="5" name="a1" style="height: 70px;width: 70px;" onclick="yaz(5)">
+            <input type="button" value="6" name="a1" style="height: 70px;width: 70px;" onclick="yaz(6)">
+            <input type="button" value="-" name="a1" style="height: 50px;width: 50px; font-size: 25px;"
+                onclick="CIKAR()"></br>
+            <input type="button" value="7" name="a1" style="height: 70px;width: 70px;" onclick="yaz(7)">
+            <input type="button" value="8" name="a1" style="height: 70px;width: 70px;" onclick="yaz(8)">
+            <input type="button" value="9" name="a1" style="height: 70px;width: 70px;" onclick="yaz(9)">
+            <input type="button" value="*" name="a1" style="height: 50px;width: 50px; font-size: 25px;"
+                onclick="CARP()"></br>
+            <input type="button" value="AC" name="a1" style="height: 70px;width: 70px;" onclick="sifirla()">
+            <input type="button" value="0" name="a1" style="height: 70px;width: 70px;" onclick="yaz(0)">
+            <input type="button" value="C" name="a1" style="height: 70px;width: 70px;" onclick="sil()">
+            <input type="button" value="/" name="a1" style="height: 50px;width: 50px; font-size: 25px;" onclick="BOL()">
+        </form>
+    </center>
+</body>
+
+</html>
